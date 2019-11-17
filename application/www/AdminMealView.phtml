@@ -1,0 +1,66 @@
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/user/register">Admin</a></button>
+
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/user/register">Meal</a></button>
+
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/user/register">Admin user</a></button>
+
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/user/register">Réserver</a></button>
+
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/Commande">Commender</a></button>
+
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/LoginOut">Déconnexion</a></button>
+
+<h2>Ajout d'un produit alimentaire au nouveau catalogue</h2>
+<form>
+	<fieldset>
+		<legend>Caractéristiques</legend>
+		<ul>
+			<li>
+				<label  for="name">Nom :</label>
+				<input type="text" name="name" id="name" >
+			</li>
+
+			<li>
+				<label  for="description">Déscription :</label>
+				<input type="text" name="description" id="description" >
+			</li>
+
+			<li>
+				<label  for="photo">Photo :</label>
+				<input type="text" name="fileName" id="photo" value="choisir un fichier">
+				<input type="file" name="fichier">
+			</li>
+		</ul>
+		<h3>Merci de ronomer le fichier de la photo avec le nom de l'aliment avant de l'envoyer</h3>
+
+	</fieldset>
+
+	<fieldset>
+		<legend>Approvisionnement</legend>
+		<ul>
+			<li>
+				<label for="stockInitial">Stock initial :</label>
+				<input type="number" name="stockInitial" id="stockInitial">
+			</li>
+
+			<li>
+				<label for="prixAchat">Prix d'achat :</label>
+				<input type="number" name="prixAchat" id="prixAchat">
+			</li>
+
+			<li>
+				<label for="prixVente">Prix de vente :</label>
+				<input type="number" name="prixVente" id="prixVente">
+			</li>
+		</ul>
+	</fieldset>
+
+	<button  type="submit"  name="submit" class="button button-primary">Créer le compte</button>
+
+	<button  type="submit" class="button button-cancel">Annuler</button>
+	
+	 <button  type="submit"  name="submit" class="button button-primary">Créer le compte</button>
+
+	<button  type="submit" class="button button-cancel">Annuler</button>
+
+</form>

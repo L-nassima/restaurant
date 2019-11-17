@@ -1,0 +1,82 @@
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/Admin">Admin</a></button>
+
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/">Meal</a></button>
+
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/">Admin user</a></button>
+
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/Booking">Réserver</a></button>
+
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/Commande">Commender</a></button>
+
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/LoginOut">Déconnexion</a></button>
+
+
+<h2>Ajout d'un produit alimentaire au nouveau catalogue</h2>
+
+<!-- Formulaire -->
+<form method="POST">
+	<fieldset>
+		<legend>Caractéristiques</legend>
+		<ul>
+			<li>
+				<label  for="name">Nom :</label>
+				<input type="text" name="nameMeal" id="name" ><br><br>
+			</li>
+
+			<li>
+				<label  for="description">Déscription :</label>
+				<input type="text" name="description" id="description" >
+			</li>
+			
+			<li>
+				<label  for="photo">Photo :</label>
+				<input type="file" name="fichier" id="photo"><br>
+			</li>
+		</ul>
+		<h3>Merci de ronomer le fichier de la photo avec le nom de la photo</h3>
+
+	</fieldset>
+
+	<fieldset>
+		<legend>Approvisionnement</legend>
+		<ul>
+			<li>
+				<label for="stockInitial">Stock initial :</label>
+				<input type="text" name="QuantityInStock" id="stockInitial"><br>
+			</li>
+
+			<li>
+				<label for="prixAchat">Prix d'achat :</label>
+				<input type="text" name="buyPrice" id="prixAchat"><br>
+			</li>
+
+			<li>
+				<label for="prixVente">Prix de vente :</label>
+				<input type="text" name="salePrice" id="prixVente"><br>
+			</li>
+		</ul>
+	</fieldset>
+
+	<button  type="submit"  name="submit" class="button button-primary">Ajouter</button>
+	<button  type="submit" class="button button-cancel">Annuler</button>
+
+</form>
+
+
+<form method="POST" action="<?= $requestUrl ?>/Remouve">
+	<fieldset>
+		<legend>Retirer article</legend>
+			<ul>
+				<?php foreach($nameMeal as $mil): ?>
+				<li>
+					<input type="checkbox" value="<?=$mil['Id'] ?>" name="selectMeal[]" style="width:0">
+					<span><?= $mil['Name']; ?><?= $mil['SalePrice']; ?>€</span>
+				</li>
+				<?php endforeach; ?>
+			</ul>
+	</fieldset>
+		
+    <button  type="submit"  name="delete" value='ok' class="button button-primary">Supprimer</button>
+	<button  type="submit" class="button button-cancel">Annuler</button>
+		
+</form>

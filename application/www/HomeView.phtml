@@ -1,0 +1,23 @@
+
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/user/register">créer un compte</a></button>
+
+<button type="submit" class ="button button-primary btnConect"><a href="<?= $requestUrl ?>/user/login">connexion</a></button>
+
+
+<table class="generic-table meal-list">
+    <caption>Carte du restaurant</caption>
+    <tbody>
+        
+        <?php foreach($meals as $ms) : ?>
+            
+            <tr>
+                <td><img src="<?=$wwwUrl ?>/images/meals/<?= $ms["Photo"]; ?>" alt="images"></td>
+
+                <td><h3><?= $ms['Name'] ?></h3><br><br><?= $ms['Description'] ?></td>
+                <td><?= $ms['SalePrice'] ?></td>
+
+            </tr>
+        <?php endforeach;?>
+
+    </tbody>
+</table>

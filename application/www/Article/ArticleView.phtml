@@ -1,0 +1,32 @@
+
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/Admin">Admin</a></button>
+
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>">Meal</a></button>
+
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>">Admin user</a></button>
+
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/Booking">Réserver</a></button>
+
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/commande">Commender</a></button>
+
+<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/loginOut">Déconnexion</a>
+</button>
+
+<table class="generic-table meal-list">
+    <caption>Carte du restaurant</caption>
+    <tbody>
+        <!-- Code HTML à écrire -->
+        
+        
+        <?php foreach($meals as $ms) : ?>
+            <tr>
+                <td><img src="<?=$wwwUrl ?>/images/meals/<?= $ms["Photo"]; ?>" alt="images"></td>
+
+                <td><h3><?= $ms['Name'] ?></h3><br><br><?= $ms['Description'] ?></td>
+                <td><?= $ms['SalePrice'] ?></td>
+
+            </tr>
+        <?php endforeach;?>
+
+    </tbody>
+</table>

@@ -1,0 +1,77 @@
+
+<nav>
+	
+	<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/">Meal</a></button><button>
+	
+	<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/Commande">Commender</a></button>
+
+	<button type="submit" class ="button  button-primary "><a href="<?= $requestUrl ?>/Booking">Réserver</a></button>
+
+	<button type="submit" class ="button  button-primary "><a href="<?=$requestUrl ?>/LoginOut">Déconnexion</a></button>
+	
+</nav>
+
+	<h2>Passer une commande</h2>
+
+	<form method="Post" class="generic-form" action="<?= $requestUrl ?>/Panier">
+		<fieldset>
+			<legend>Ajouter un article</legend>
+
+			<label  for="name">Nom :</label>
+			<select id ='meals' name='mealId'>
+
+				<?php foreach( $meals as $m): ?>
+				<option value="<?= $m['Id'] ?>"><?= $m['Name'] ?></option>
+				<?php endforeach; ?>
+		
+			
+			</select><br>
+
+			<section id ="target">
+				<h3 class="mealName"></h3>
+				<p class="mealDesc"></p>
+				<img src="">
+			</section>
+
+			<label for="amount"> Quantité : </label>
+			<input type="text" name="amount" id="amount" value='1'>
+			<input  type="submit" class=" button button-primary" value="Ajouter">
+		
+		</fieldset>
+		
+		<fieldset>
+			<legend>Recapitulatif de la commande</legend>
+		  	<table class="generic-table">
+                <tbody>
+                    <tr>
+                        <th>Quanttié</th>
+                        <th>Produit</th>
+                        <th>Prix Unitaire</th>
+                        <th>Prix Total</th>
+                        <th>Action</th>
+                    </tr>
+
+                     <?php  foreach($paniers as $mil) : ?>
+                
+                    <tr> 
+                        <td> <?= $mil['amount']; ?></td>                         
+                        <td><strong><?= $mil['name']; ?></strong></td>
+                        <td><?= $mil['price']; ?> €</td>
+                        <td><?= $mil['price']*$mil['amount']; ?> €</td>  
+                        <td><a href="<?= $requestUrl ?>/DeleteArticle?mealId=<?= $mil['id'] ?>">supprimer</a></td>
+                    </tr>          
+                        
+                    <?php endforeach; ?>
+
+                </tbody>
+            </table>
+
+            <button><a href="<?= $requestUrl ?>/Clear">clear</a></button>
+            <button><a href="<?= $requestUrl ?>/Commande">Modifier</a></button>
+            
+		</fieldset>
+
+		<button  type="submit" class=" button button-primary"><a href ="<?= $requestUrl ?>/BonCommande">Valider la commande</button>
+		<button  type="submit" class=" button button-cancel">Annuler</button>
+		
+	</form>
